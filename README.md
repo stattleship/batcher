@@ -12,7 +12,7 @@ Example
 class User < ActiveRecord::Base
 end
 
-Batcher::Process.new(User.order('influence desc'))).each do |user|
+Batcher(User.order('influence desc')).each do |user|
   user.do_something
 end
 ```
@@ -20,7 +20,7 @@ end
 The deafult batch size is 1000, but you can pass in a different batch size to tweak accordingly:
 
 ```ruby
-Batcher::Process.new(User.order('influence desc'), batch_size: 2000).each do |user|
+Batcher(User.order('influence desc'), batch_size: 2000).each do |user|
   user.do_something
 end
 ```
