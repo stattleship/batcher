@@ -1,10 +1,10 @@
 module Batcher
   class Process
-    attr_accessor :chunk_size
+    attr_accessor :batch_size
 
     def initialize(scope, opts = {})
       @scope      =  scope
-      @chunk_size = opts[:chunk_size] || 1000
+      @batch_size = opts[:batch_size] || 1000
     end
 
     def each(&block)
@@ -18,11 +18,11 @@ module Batcher
         offset = 0
         count  = @scope.count
         begin
-          @scope.limit(chunk_size).offset(offset).each do |record|
+          @scope.limit(batch_size).offset(offset).each do |record|
             yielder << record
           end
-          offset += chunk_size
-        end until (chunk_size + offset - 1) > count
+          offset += batch_size
+        end until (batch_size + offset - 1) > count
       end
     end
   end
