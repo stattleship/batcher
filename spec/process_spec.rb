@@ -4,7 +4,7 @@ require 'batcher'
 class User < ActiveRecord::Base
 end
 
-describe Batcher do
+describe Batcher::Process do
   it 'can be set a batch size' do
     batcher = Batcher::Process.new(stub, batch_size: 42)
     batcher.batch_size.should be == 42
