@@ -3,6 +3,8 @@ Batcher
 
 Batcher is a tiny gem that allows you to batch process data and slice it by whatever you require.
 
+It was extracted from [Stattleship](http://stattleship.com).
+
 Why
 ---
 
@@ -11,7 +13,9 @@ Processing ActiveRecord data is impossible with large amounts of data because th
 Example
 -------
 
-Batcher accepts an object that responds to `limit` and `offset` (a subset of the [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html)). Typically, you pass it an instance of `ActiveRecord::Relation`.
+Batcher accepts an object that responds to `limit` and `offset` (a subset of the [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html)).
+
+Typically, you pass it an instance of `ActiveRecord::Relation`.
 
     class User < ActiveRecord::Base
     end
