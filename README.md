@@ -13,7 +13,7 @@ Processing ActiveRecord data is impossible with large amounts of data because th
 Example
 -------
 
-Batcher accepts an object that responds to `limit` and `offset` (a subset of the [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html)).
+Batcher accepts an object that responds to `count`, `limit` and `offset` (a subset of the [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html)).
 
 Typically, you pass it an instance of `ActiveRecord::Relation`.
 
