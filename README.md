@@ -34,6 +34,8 @@ Batcher(User.order('influence desc'), batch_size: 2000).each do |user|
 end
 ```
 
+Note that batcher uses [Enumerator](http://www.ruby-doc.org/core-1.9.2/Enumerator.html). Therefore it is only supported on Ruby 1.9+.
+
 License
 -------
 
