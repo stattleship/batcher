@@ -17,18 +17,22 @@ Batcher accepts an object that responds to `count`, `limit` and `offset` (a subs
 
 Typically, you pass it an instance of `ActiveRecord::Relation`.
 
-    class User < ActiveRecord::Base
-    end
+```ruby
+class User < ActiveRecord::Base
+end
 
-    Batcher(User.order('influence desc')).each do |user|
-      user.do_something
-    end
+Batcher(User.order('influence desc')).each do |user|
+  user.do_something
+end
+```
 
 The default batch size is 1000, but you can pass in a different batch size to tweak accordingly:
 
-    Batcher(User.order('influence desc'), batch_size: 2000).each do |user|
-      user.do_something
-    end
+```ruby
+Batcher(User.order('influence desc'), batch_size: 2000).each do |user|
+  user.do_something
+end
+```
 
 License
 -------
